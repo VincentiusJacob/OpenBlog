@@ -7,6 +7,6 @@ Features :
 3. Responsive Design: Optimized for both desktop and mobile devices.
 
 Technologies used: 
-- Frontend: HTML, CSS, JavaScript, EJS
+- Frontend: HTML, CSS, JavaScript, EJS, Bootstrap
 - Backend: Node.js, Express
 
