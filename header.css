@@ -1,0 +1,159 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+nav.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    background-color: #241F32;
+    color: white;
+    z-index: 1000;
+}
+
+body {
+    padding-top: 80px;
+}
+
+
+.navbar h1 {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #CFE887;
+}
+
+.navbar-right {
+    gap:2em;
+}
+
+.navbar-right > a {
+    text-decoration: none;
+    color:white;
+    font-size:20px;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color:#CFE887;
+}
+
+.navbar-right > a:hover {
+    border-bottom: 1px solid #CFE887;
+}
+
+.searchContainer {
+    display:flex;
+    position:relative;
+    flex-direction: column;
+    gap:20px;
+}
+
+.blogsFound {
+    position:absolute;
+    display:none;
+    flex-direction: column;
+    gap:8px;
+    align-items: center;
+    width: 100%; 
+    top: 50px;    
+    background-color: white; 
+    z-index: 1000; 
+
+}
+
+.blogsFoundBox {
+    display:flex;
+    gap:8px;
+    align-items: center;
+    width: 90%; 
+    padding: 10px; 
+    border-bottom: 1px solid #ccc; 
+    background-color: white;
+}
+
+.blogsFoundBox img {
+    width:50px;
+    height:50px;
+    object-fit: cover;
+}
+
+.blogsFoundBox p {
+    font-size:12px;
+    color:black;
+    margin:0;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+        gap:1em;
+    }
+
+    .navbar-right {
+        gap: 1em;
+        font-size: 18px;
+    }
+
+    .navbar-right > a {
+        font-size: 16px;
+    }
+
+    .searchContainer {
+        width: 100%;
+    }
+
+    .searchContainer input {
+        width: 100%;
+    }
+
+    .blogsFound {
+        top: 40px;
+        width:100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 10px;
+    }
+
+    .navbar > h1 {
+        font-size: 24px;
+    }
+
+    .navbar-right {
+        gap: 0.5em;
+    }
+
+    .navbar-right > a {
+        font-size: 14px;
+    }
+
+    .searchContainer {
+        width: 100%;
+    }
+
+    .searchContainer input {
+        width: calc(100% - 10px);
+    }
+
+    .blogsFoundBox {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .blogsFoundBox img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .blogsFoundBox p {
+        font-size: 10px;
+    }
+}

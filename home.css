@@ -1,0 +1,309 @@
+.banner {
+    height:60vh;
+    width:100%;
+    position: relative;
+    border:1px solid black;
+    font-family: "Russo One", sans-serif;
+    font-style: normal;
+}
+
+.banner > video {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    position:absolute;
+    z-index:-1;
+}
+
+.banner > h1 {
+    z-index:1;
+    font-weight: 500;
+    font-size:5em;
+}
+
+.banner > h3 {
+    z-index:1;
+    font-weight:300;
+}
+
+
+
+.container {
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    padding:16px;
+    gap:10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    overflow: hidden;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+
+}
+
+.container-right {
+    display:flex;
+    flex-direction: column;
+ 
+}
+
+.featureContainer {
+    background-color: #241F32;
+    color:white;
+    padding:40px;
+    height:100%;
+}
+
+.featureContainer > h1 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #CFE887;
+}
+
+.filterContainer {
+width:50%;
+margin-left: auto;
+margin-right: auto;
+}
+
+.filterContainer > button {
+    padding: 10px 0;
+    border-radius: 20px;
+    border:none;
+    width:100px;
+    text-align: center;
+    background-color:grey;
+    color:white;
+    text-decoration: none;
+}
+
+.filterContainer > button:hover {
+    background-color:blue;
+}
+
+.readPost {
+    padding:50px;
+    background-color: #241F32;
+    color:white;
+}
+
+.readPost > h1 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #CFE887;
+}
+
+#viewmore {
+    width:200px;
+    margin-left: auto;
+    text-align: center;
+    margin-right: auto;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    padding: 10px 30px 10px 30px;
+    background-color:#FF83FF;
+}
+
+#viewmore:hover {
+    background-color: black;
+    color:#CFE887;
+}
+
+.post {
+    border:1px solid black;
+    height:300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    overflow: hidden;
+}
+
+.post:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.postsContainer {
+    display:grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    gap:30px;
+}
+
+
+.post-footer-right {
+    display:flex;
+    gap:24px;
+    align-items: center;
+}
+
+.post-footer-right-viewers {
+    display:flex;
+    gap:12px;
+    min-width:25%;
+    background-color:black;
+    border-radius: 12px;
+    color:#CFE887;
+    padding:12px;
+    flex: 1; 
+}
+
+.post-footer-right-viewers p {
+    height:0;
+    flex: 1; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    color:white;
+}
+
+.post-footer-right-viewers span {
+    padding:0;
+    margin:0;
+}
+
+
+.post {
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    padding:16px;
+    gap:10px;
+}
+
+.post > h1 {
+    font-size:30px;
+}
+
+.post-footer {
+    display:flex;
+    justify-content: space-between;
+}
+
+.post-footer-right > a {
+    color:white;
+    text-decoration: none;
+}
+.post-footer-right > a:hover {
+    color:#CFE887;
+    text-decoration: underline;
+}
+
+.btn-primary {
+    padding:20px;
+}
+
+@media (max-width: 1024px) {
+    .banner > h1 {
+        font-size: 3em;
+    }
+
+    .banner > h3 {
+        font-size: 1.5em;
+    }
+
+    .featureContainer h1,
+    .readPost h1 {
+        font-size: 2em;
+    }
+
+    .postsContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filterContainer {
+        width: 70%;
+    }
+
+    .filterContainer > button {
+        width: 80px;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .banner > h1 {
+        font-size: 2.5em;
+    }
+
+    #firstPost {
+        width:100%;
+    }
+
+    .banner > h3 {
+        font-size: 1.2em;
+    }
+
+    .featureContainer h1,
+    .readPost h1 {
+        font-size: 1.8em;
+    }
+
+    .postsContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .container-right {
+        flex-direction: row;
+    }
+
+    .container,
+    .container-right .container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .filterContainer {
+        width: 90%;
+    }
+
+    .filterContainer > button {
+        width: 70px;
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .banner > h1 {
+        font-size: 2em;
+    }
+
+    .banner > h3 {
+        font-size: 1em;
+    }
+
+    .featureContainer h1,
+    .readPost h1 {
+        font-size: 1.5em;
+    }
+
+    .postsContainer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .filterContainer {
+        width: 100%;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .filterContainer > button {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    #viewmore {
+        width: 100%;
+    }
+}

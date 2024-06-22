@@ -1,0 +1,105 @@
+
+
+<%- include("../partials/header.ejs") %>
+
+<div class="banner d-flex flex-column justify-content-center align-items-center">
+    <video src="images/background.mp4" autoplay muted loop preload="auto"></video>
+    <h1> OPEN BLOGS </h1>
+    <h3> "Craft Your Journey: Where Every Post Paints a Thousand Words." </h3>
+</div>
+
+<div class="featureContainer d-flex flex-column gap-5">
+    <h1> FEATURING POSTS </h1>
+    <% let topThree = blog.sort((a, b) => b.viewers - a.viewers).slice(0, 3); %>
+    <div class="row gap-5">
+        <div class="container col-7" id="firstPost" style="background-image: url('<%= topThree[0].image %>'); background-size: cover; object-fit: cover;">
+                <h1> <%= topThree[0].title %></h1>
+                <div class="post-footer">
+                    <p> <%= topThree[0].post_date %> </p>
+                    <div class="post-footer-right">
+                        <div class="post-footer-right-viewers">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            <p id="viewers"> <%= topThree[0].viewers %></p>
+                        </div>
+                        <a href="/blog/<%= encodeURIComponent(topThree[0].title.toLowerCase().replace(' ', '-')) %>"> See more → </a>
+                    </div>
+                    
+                </div>
+        </div>
+        <div class="container-right col gap-5">
+            <div class="container row" style="background-image: url('<%= topThree[1].image %>'); background-size: cover; object-fit: cover;">
+
+                <h1> <%= topThree[1].title %></h1>
+                <div class="post-footer">
+                    <p> <%= topThree[1].post_date %> </p>
+                    <div class="post-footer-right">
+                        <div class="post-footer-right-viewers">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            <p id="viewers"> <%= topThree[1].viewers %></p>
+                        </div>
+                        <a href="/blog/<%= encodeURIComponent(topThree[1].title.toLowerCase().replace(' ', '-')) %>"> See more → </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container row" style="background-image: url('<%= topThree[2].image %>'); background-repeat: no-repeat; background-size: cover; object-fit: cover;">
+                <h1> <%= topThree[2].title %></h1>
+                <div class="post-footer">
+                    <p> <%= topThree[2].post_date %> </p>
+                    <div class="post-footer-right">
+                        <div class="post-footer-right-viewers">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            <p id="viewers"> <%= topThree[2].viewers %></p>
+                        </div>
+                        <a href="/blog/<%= encodeURIComponent(topThree[2].title.toLowerCase().replace(' ', '-')) %>"> See more → </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="readPost d-flex flex-column gap-5">
+    <h1> READ POSTS </h1>
+    <div class="filterContainer d-flex justify-content-between">
+        <button class="type" id="all">All</button>
+        <button class="type" id="sports">Sports</button>
+        <button class="type" id="technology">Technology</button>
+        <button class="type" id="games">Games</button>
+        <button class="type" id="dailylife">Daily Life</button>
+    </div>
+
+    <div class="postsContainer">
+        <% blog.slice(0, 6).forEach((blog) => { %>
+            <div class="post" style="background-image: url('<%= blog.image %>'); background-repeat: no-repeat; background-size: cover; object-fit: cover;">
+                <h1> <%= blog.title %></h1>
+                <div class="post-footer">
+                    <p> <%= blog.post_date %> </p>
+                    <div class="post-footer-right">
+                        <div class="post-footer-right-viewers">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            <p id="viewers"> <%= blog.viewers %></p>
+                        </div>
+                        <a href="/blog/<%= encodeURIComponent(blog.title.toLowerCase().replace(' ', '-')) %>"> See more → </a>
+                    </div>
+                </div>
+            </div> 
+        <% }) %>
+    </div>
+    
+        
+    
+    
+    
+
+    <a href="/viewMore" id="viewmore"> View More  </a>
+</div>
+
+<%- include("../partials/footer.ejs") %>

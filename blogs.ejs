@@ -1,0 +1,34 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="readPost d-flex flex-column gap-5">
+    <div class="filterContainer d-flex justify-content-between">
+        <button id="all">All</button>
+        <button id="sports">Sports</button>
+        <button id="technology">Technology</button>
+        <button id="games">Games</button>
+        <button id="dailylife">Daily Life</button>
+    </div>
+
+    <div class="postsContainer">
+        <% blog.forEach((blog) => { %>
+            <div class="post" style="background-image: url('<%= blog.image %>'); background-size: cover;">
+                <h1> <%= blog.title %></h1>
+                <div class="post-footer">
+                    <p> <%= blog.post_date %> </p>
+                    <div class="post-footer-right">
+                        <div class="post-footer-right-viewers">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            <p id="viewers"> <%= blog.viewers %></p>
+                        </div>
+                        <a href="/blog/<%= encodeURIComponent(blog.title.toLowerCase().replace(' ', '-')) %>"> See more → </a>
+                    </div>
+                </div>
+           </div>
+       <% }) %>
+    </div>
+
+</div>
+
+<%- include("../partials/footer.ejs") %>

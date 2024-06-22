@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rowdies", sans-serif;
+}
+
+footer {
+    padding: 50px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.media {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.media-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+.media-icon:hover {
+    transform: scale(1.2);
+}
+
+
+address {
+    font-style: normal;
+    color: gray;
+    font-size: 14px;
+}
+
+
+@media (max-width: 1024px) {
+    .media-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+ 
+}
+
+
+@media (max-width: 768px) {
+    .media-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+   
+}
+
+
+@media (max-width: 480px) {
+    .media-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    footer {
+        padding: 30px 0;
+    }
+}
